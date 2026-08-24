@@ -1,25 +1,23 @@
 name: Spring Boot CI
 
-"on":
+on:
   push:
     branches:
       - main
-      - 'feature/**'
-
+      - feature/github-actions-ci
   pull_request:
-    branches:
-      - main
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '21'
           distribution: 'temurin'
